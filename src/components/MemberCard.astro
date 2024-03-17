@@ -1,0 +1,11 @@
+---
+interface Props{
+  nick:string;
+  role:string;
+}
+const { nick, role } = Astro.props;
+---
+
+<div class="bg-black/70 rounded-md overflow-hidden group">
+  <img src=`/images/${nick}.png` class="group-hover:scale-150 transition-all group-hover:translate-y-16" alt=`${nick} image`>
+</div>
