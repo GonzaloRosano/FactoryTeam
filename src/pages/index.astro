@@ -2,6 +2,11 @@
 import MemberCard from '../components/MemberCard.astro';
 import RChar from '../components/RandChar.astro';
 import Layout from '../layouts/Layout.astro';
+
+let lider = "#FF5555";
+let admin = "55FFFF";
+let mod = "#5555FF";
+let member = "#FFFF55";
 ---
 
 
@@ -10,14 +15,14 @@ import Layout from '../layouts/Layout.astro';
     <main class="flex w-full justify-center py-5 items-center flex-col">
 			<h1 class="text-white flex flex-row text-6xl font-mc mb-8 font-bold"><RChar texto='1'/> Factory<RChar texto="l"></h1>
             <div class="grid mx-5 grid-cols-1 lg:grid-cols-5 md:grid-cols-4 sm:grid-cols-3 xs:grid-cols-2 gap-10">
-                <MemberCard nick="Facuux_09" role="Lider" />
+                <MemberCard nick="Facuux_09" role="Lider" color=`${lider}`/>
                 <!-- <MemberCard nick="Tondrox" role="Administrador" /> -->
                 <!-- <MemberCard nick="DrAlex99" role="Moderador" /> -->
 
-                <MemberCard nick="Onasor" role="Miembro" />
-                <MemberCard nick="ZzlFull5" role="Miembro" />
-                <MemberCard nick="luzmila_MYT" role="Miembro"/>
-                <MemberCard nick="lowwn" role="Miembro" />
+                <MemberCard nick="Onasor" role="Miembro" color=`${member}`/>
+                <MemberCard nick="ZzlFull5" role="Miembro" color=`${member}`/>
+                <MemberCard nick="luzmila_MYT" role="Miembro" color=`${member}`/>
+                <MemberCard nick="lowwn" role="Miembro" color=`${member}`/>
             </div>
 
     </main>
