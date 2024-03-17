@@ -11,6 +11,7 @@ const { nick, role, color } = Astro.props;
   <div class="w-full h-auto overflow-hidden">
     <img
       src={`/images/${nick}.webp`}
+      style="aspect-ratio:1/1;"
       class="select-none group-hover:scale-150 group-hover:translate-y-20 lg:group-hover:translate-y-[55px]  sm:group-hover:scale-150 -z-10 transition-all sm:group-hover:translate-y-10 xs:group-hover:translate-y-16 xs:group-hover:scale-[1.55]"
       alt={`${nick} image`}
     />
