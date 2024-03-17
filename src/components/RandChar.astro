@@ -1,0 +1,31 @@
+---
+interface Props {
+  texto: string;
+}
+
+const { texto } = Astro.props;
+const characters = "Iil!";
+const randomChar = () => characters[Math.floor(Math.random() * characters.length)];
+let text = `${texto}`;
+
+let intervalID = setInterval(updateText, 50);
+
+function updateText() {
+  let randomizedText = '';
+  text.split('').forEach((char) => {
+    randomizedText += randomChar();
+  });
+  return randomizedText
+}
+---
+<style>
+  span {
+    display: flex;
+    width: 25px;
+    justify-content: center;
+    color: #FF55FF;
+    margin-inline: 4px;
+  }
+</style>
+
+<span>{updateText()}</span>
