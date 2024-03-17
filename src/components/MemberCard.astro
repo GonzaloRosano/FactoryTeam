@@ -10,11 +10,11 @@ const { nick, role } = Astro.props;
   <div class="w-full h-auto overflow-hidden">
     <img
       src={`/images/${nick}.webp`}
-      class="select-none group-hover:scale-150 -z-10 transition-all group-hover:translate-y-16"
+      class="select-none group-hover:scale-150 group-hover:translate-y-20 sm:group-hover:scale-150 -z-10 transition-all sm:group-hover:translate-y-10 xs:group-hover:translate-y-16 xs:group-hover:scale-[1.55]"
       alt={`${nick} image`}
     />
   </div>
-  <h3 class="font-mc align-middle flex justify-between px-1 z-10 text-white">
+  <h3 class="font-mc h-full align-middle sm:text-xs lg:text-[14px] flex justify-between px-1 z-10 text-white">
     {nick} <span id="roleSpan" class="font-bold">{role}</span>
   </h3>
 </a>
