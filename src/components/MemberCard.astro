@@ -6,6 +6,15 @@ interface Props{
 const { nick, role } = Astro.props;
 ---
 
-<div class="bg-black/70 rounded-md overflow-hidden group">
-  <img src=`/images/${nick}.png` class="group-hover:scale-150 transition-all group-hover:translate-y-16" alt=`${nick} image`>
-</div>
+<a href="#" class="bg-black/70 rounded-md overflow-hidden group">
+  <div class="w-full h-auto overflow-hidden">
+    <img
+      src={`/images/${nick}.webp`}
+      class="select-none group-hover:scale-150 -z-10 transition-all group-hover:translate-y-16"
+      alt={`${nick} image`}
+    />
+  </div>
+  <h3 class="font-mc align-middle flex justify-between px-1 z-10 text-white">
+    {nick} <span id="roleSpan" class="font-bold">{role}</span>
+  </h3>
+</a>
