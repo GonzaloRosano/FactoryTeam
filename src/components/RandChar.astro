@@ -4,20 +4,43 @@ interface Props {
 }
 
 const { texto } = Astro.props;
-const characters = "Iil!";
-const randomChar = () => characters[Math.floor(Math.random() * characters.length)];
-let text = `${texto}`;
-
-let intervalID = setInterval(updateText, 50);
-
-function updateText() {
-  let randomizedText = '';
-  text.split('').forEach((char) => {
-    randomizedText += randomChar();
-  });
-  return randomizedText
-}
+const characters = "il¡|!";
 ---
+<astro-span-random data-texto={texto} data-characters={characters}>
+  <span></span>
+</astro-span-random>
+
+<script>
+  class AstroSpanRandom extends HTMLElement {
+    constructor() {
+      super();
+
+      const characters = this.dataset.characters || "il¡|!";
+      const texto = this.dataset.texto || '1';
+
+      const randomChar = () => characters[Math.floor(Math.random() * characters.length)];
+
+      const span = this.querySelector('span');
+      if (span !== null) {
+        let randomizedText = '';
+
+        const updateText = () => {
+          randomizedText = '';
+          texto.split('').forEach((char) => {
+            randomizedText += randomChar();
+          });
+          span.innerText = randomizedText;
+        }
+
+        setInterval(updateText, 40);
+      }
+    }
+  }
+
+  customElements.define('astro-span-random', AstroSpanRandom);
+</script>
+
+
 <style>
   span {
     display: flex;
@@ -27,5 +50,3 @@ function updateText() {
     margin-inline: 4px;
   }
 </style>
-
-<span>{updateText()}</span>
