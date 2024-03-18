@@ -1,0 +1,9 @@
+---
+import { members } from '../data/data.ts'
+import MemberCard from './MemberCard.astro'
+
+
+---
+{
+members.map( members => <MemberCard miembros={members}/> )
+}

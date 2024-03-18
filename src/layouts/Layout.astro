@@ -1,4 +1,6 @@
 ---
+import { ViewTransitions } from 'astro:transitions';
+import RChar from '../components/RandChar.astro';
 interface Props {
 	title: string;
 }
@@ -15,6 +17,8 @@ const { title } = Astro.props;
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
+		<ViewTransitions fallback='none'/>
+
 	</head>
 	<style is:global>
 		@font-face {
@@ -22,7 +26,9 @@ const { title } = Astro.props;
 			src: url('/fonts/minecraft.woff') format('woff');
 		}
 	</style>
-	<body class="bg-black/90">
+	<body class="bg-black/90 ">
+		<h1 class="text-white flex flex-row text-6xl mx-auto w-full justify-center font-mc my-2 font-bold"><RChar texto='1'/> Factory<RChar texto="l"></h1>
+
 		<slot />
 	</body>
 </html>
