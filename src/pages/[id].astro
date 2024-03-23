@@ -1,19 +1,18 @@
 ---
 import { allMembers } from '../data/data.js';
 import Layout from "../layouts/Layout.astro";
-const { nick } = Astro.params
+const { id } = Astro.params
 
-const member = allMembers.find((member) => member.nick === nick)
+const member = allMembers.find((member) => member.id === id)
 ---
 
 <Layout title="Factory">
     <main class="flex w-9/12 justify-center m-auto py-5 items-center flex-col flex-1 ">
         <h1 class="text-white flex flex-row text-5xl font-mc mb-8 font-bold justify-between w-full">{member?.nick} <span style=`color: ${member?.color};`>{member?.role}</span></h1>
-        <div class="flex w-full flex-1 align-mnickdle" transition:animate="none" transition:name=`member ${nick} image`>
+        <div class="flex w-full flex-1 align-middle" transition:animate="fade" transition:name=`member ${id} image-container`>
             <img src=`/images/${member?.nick}.webp` 
             class="w-4/12 my-auto" 
             alt=`miembro ${member?.nick}`>
-            <div></div>
         </div>
         <a href="../" class="font-mc font-semibold">Regresar</a>
 
