@@ -8,16 +8,21 @@ const { miembros } = Astro.props;
 const {id, nick , role, color } = miembros
 ---
 
-<a href=`./${id}` class=`bg-black/70 rounded-md overflow-hidden group border` transition:name=`member ${id} box` style=`border-color:${color}; box-shadow: 0px 0px 4px ${color};`>
-  <div class="w-full h-auto overflow-hidden" transition:name=`member ${id} image`>
+<a href=`./${nick}` class=`bg-black/70 rounded-md overflow-hidden group border` transition:name=`member ${id} box` style=`border-color:${color}; box-shadow: 0px 0px 4px ${color};`>
+  <div class="w-full h-auto overflow-hidden" transition:name=`member ${nick} image`>
     <img
       src={`/images/${nick}.webp`}
       style="aspect-ratio:1/1;"
-      class="select-none group-hover:scale-150 group-hover:translate-y-20 lg:group-hover:translate-y-[55px]  sm:group-hover:scale-150 -z-10 transition-all sm:group-hover:translate-y-10 xs:group-hover:translate-y-16 xs:group-hover:scale-[1.55]"
+      class="select-none "
       alt={`${nick} image`}
+
+      
     />
+    <!-- group-hover:scale-150 group-hover:translate-y-20 lg:group-hover:translate-y-[55px]  
+      sm:group-hover:scale-150 -z-10 transition-all sm:group-hover:translate-y-10 
+      xs:group-hover:translate-y-16 xs:group-hover:scale-[1.55] -->
   </div>
   <h3 class="font-mc h-full align-middle sm:text-xs lg:text-[14px] flex justify-between px-2 py-1 z-10 text-white">
-    {nick} <span class="font-bold" transition:name=`member ${id} member-details`style={`color: ${color}` }>{role}</span>
+    {nick} <span class="font-bold" transition:name=`member ${nick} member-details`style={`color: ${color}` }>{role}</span>
   </h3>
 </a>
